@@ -1,0 +1,22 @@
+# Prerequisites
+
+# Object files
+
+# Linker output
+
+# Precompiled Headers
+
+# Libraries
+
+# Shared objects (inc. Windows DLLs)
+
+# Executables
+
+# Debug files
+DebugConfig/
+Listings/
+Objects/
+BIN/
+
+# Kernel Module Compile Results
+*.uvguix.*
