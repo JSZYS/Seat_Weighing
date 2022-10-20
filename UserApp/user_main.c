@@ -68,19 +68,23 @@ void user_main(void)
 
       if (hx711_adc[0] != 0)
       {
-        hx711_weigh[0] = ((float)(hx711_adc[0] + 24486)) / 19.43f + 920;
+        // hx711_weigh[0] = ((float)(hx711_adc[0] + 24486)) / 19.43f + 920;
+        hx711_weigh[0] = ((float)(hx711_adc[0] + 68688)) / 23.75f;
       }
       if (hx711_adc[1] != 0)
       {
-        hx711_weigh[1] = ((float)(hx711_adc[1] + 3915)) / 25.93f;
+        // hx711_weigh[1] = ((float)(hx711_adc[1] + 3915)) / 25.93f;
+        hx711_weigh[1] = ((float)(hx711_adc[1] + 12700)) / 26.12f;
       }
       if (hx711_adc[2] > 41794)
       {
-        hx711_weigh[2] = ((float)(hx711_adc[2] - 41794)) / 25.22f;
+        // hx711_weigh[2] = ((float)(hx711_adc[2] - 41794)) / 25.22f;
+        hx711_weigh[2] = ((float)(hx711_adc[2] + 32486)) / 32.42f;
       }
       if (hx711_adc[3] != 0)
       {
-        hx711_weigh[3] = ((float)(hx711_adc[3] + 2540)) / 25.18f;
+        // hx711_weigh[3] = ((float)(hx711_adc[3] + 2540)) / 25.18f;
+        hx711_weigh[3] = ((float)(hx711_adc[3] + 23488)) / 14.98f;
       }
 
       // // µ¥Î»ÊÇ g
