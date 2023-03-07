@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    main.c 
+  * @file    main.c
   * @author  oogrow
   * @version V1.0.0
   * @date    2022-08-10
@@ -9,7 +9,7 @@
   * @attention
   *
   ******************************************************************************
-  */  
+  */
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -38,25 +38,25 @@
   */
 int main(void)
 {
-  /* 设置 NVIC 中断分组 2 */
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    /* 设置 NVIC 中断分组 2 */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 
-  /* 延迟函数初始化 */
-  SysTick_Init(72);
+    /* 延迟函数初始化 */
+    SysTick_Init(72);
 
-  std_gpio_init();
-  #if UART_DEBUG
-  std_usart2_uart_init();
-  #endif
-  // std_adc_init();
-  std_tim3_init();
-  std_can_init();
-  
-  /* Infinite loop */
-	user_main();
-  while (1)
-  {
-  }
+    std_gpio_init();
+#if UART_DEBUG
+    std_usart2_uart_init();
+#endif
+    // std_adc_init();
+    std_tim3_init();
+    std_can_init();
+
+    /* Infinite loop */
+    user_main();
+    while (1)
+    {
+    }
 }
 
 /******************** (C) COPYRIGHT 2022 oogrow ***************END OF FILE*****/
