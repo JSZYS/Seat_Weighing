@@ -210,6 +210,7 @@ void user_main(void)
 #else
            // can_send_state_buf[0] = last_total_weight;
            can_send_state_buf[1] = last_total_weight;
+<<<<<<< HEAD
             if (last_total_weight > 79) //减去座椅本身重量79kg
             {
                 can_send_state_buf[0] = last_total_weight - 79;
@@ -226,6 +227,43 @@ void user_main(void)
 								{
 									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.10;
 								}
+=======
+            if (last_total_weight > 76) //减去座椅本身重量79kg
+            {
+                can_send_state_buf[0] = last_total_weight - 76;
+//								if(can_send_state_buf[0] <= 40)
+//								{
+//									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.25;
+//								}
+//								else if(can_send_state_buf[0] > 40 && can_send_state_buf[0] < 100)
+//								{
+//									can_send_state_buf[0] = (float)can_send_state_buf[0] * ((float)1.25 - (float)0.15 / 60 * ((float)can_send_state_buf[0] - 40));
+//								}
+//								else
+//								{
+//									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.10;
+//								}
+							
+								if(can_send_state_buf[0] <= 40)
+								{
+									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.25;
+								}
+								else if(can_send_state_buf[0] > 40 && can_send_state_buf[0] <= 50)
+								{
+									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.18;
+								}
+								else if(can_send_state_buf[0] > 50 && can_send_state_buf[0] <= 80)
+								{
+									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.16;
+								}
+								
+								else
+								{
+									can_send_state_buf[0] = (float)can_send_state_buf[0] * (float)1.18;
+								}
+							
+
+>>>>>>> 79e2647 (鏇存敼浜嗗疄闄呬綋閲嶄箻浠ョ郴鏁扮殑鍊嶇巼)
             }
             else
             {
