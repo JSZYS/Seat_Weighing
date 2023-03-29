@@ -29,6 +29,18 @@ extern u32 sys_com_tick;
 extern u16 sensor_ad_buf[96];
 extern u32 area_bit_state;
 
+<<<<<<< HEAD
+=======
+//extern u32 Seat_Weight_Count;
+//extern u8 Current_Seat_weight;
+//extern u8 Last_Seat_weight;
+extern u8 Seat_weight;
+
+extern int Abs(int num);
+extern void Weight_Filtering(u32 SeatWeight);
+extern void weight_Checklist(void);
+
+>>>>>>> b7fe045 (新版本改为查表方式)
 
 #endif /* __XXXX_H__ */
 

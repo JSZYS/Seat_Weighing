@@ -18,6 +18,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "common_inc.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7fe045 (æ–°ç‰ˆæœ¬æ”¹ä¸ºæŸ¥è¡¨æ–¹å¼)
 /* Private typedef -----------------------------------------------------------*/
 
 /* Private define ------------------------------------------------------------*/
@@ -36,20 +40,36 @@
   * @retval None
   */
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b7fe045 (æ–°ç‰ˆæœ¬æ”¹ä¸ºæŸ¥è¡¨æ–¹å¼)
 /*************************************
 *º¯ÊıÃû£ºuser_main
 *ÃèÊö£ºÓÃ»§¹¦ÄÜÖ÷º¯Êı
 *²ÎÊı£ºnull
 *·µ»ØÖµ£ºnull
 **************************************/
+<<<<<<< HEAD
 void user_main(void)
 {
+=======
+
+void user_main(void)
+{
+ 
+>>>>>>> b7fe045 (æ–°ç‰ˆæœ¬æ”¹ä¸ºæŸ¥è¡¨æ–¹å¼)
     u32 hx711_adc1[4] = {0};
     u32 hx711_adc2[4] = {0};
     float hx711_weigh1[4] = {0};//Ñ¹Á¦
     float hx711_weigh2[4] = {0};//À­Á¦
     u32 total_weight = 0;
     u32 last_total_weight = 0;
+<<<<<<< HEAD
+=======
+		u32 seat_weight_filtering;
+>>>>>>> b7fe045 (æ–°ç‰ˆæœ¬æ”¹ä¸ºæŸ¥è¡¨æ–¹å¼)
 //    u32 add_weigh[4] = {0};
     static u8 check_adc_flag = 0;
 
@@ -208,6 +228,7 @@ void user_main(void)
             can_send_state_buf[1] = (u8)last_total_weight;
             can_send_msg(can_send_state_buf, 2);
 #else
+<<<<<<< HEAD
            // can_send_state_buf[0] = last_total_weight;
            can_send_state_buf[1] = last_total_weight;
 <<<<<<< HEAD
@@ -264,6 +285,23 @@ void user_main(void)
 							
 
 >>>>>>> 79e2647 (æ›´æ”¹äº†å®é™…ä½“é‡ä¹˜ä»¥ç³»æ•°çš„å€ç‡)
+=======
+            // can_send_state_buf[0] = last_total_weight;
+
+            can_send_state_buf[1] = last_total_weight;
+						seat_weight_filtering = last_total_weight;
+						
+						Weight_Filtering(seat_weight_filtering);
+						if(Seat_weight > 80)
+						{
+							Seat_weight = 76;
+						}
+
+            if (last_total_weight > Seat_weight) //¼õÈ¥×ùÒÎ±¾ÉíÖØÁ¿79kg
+            {
+                can_send_state_buf[0] = last_total_weight - Seat_weight;
+                weight_Checklist();
+>>>>>>> b7fe045 (æ–°ç‰ˆæœ¬æ”¹ä¸ºæŸ¥è¡¨æ–¹å¼)
             }
             else
             {
